@@ -3,5 +3,14 @@
     "packageManager": "pnpm@9.6.0",
     "engines": {
         "pnpm": ">=9"
+    },
+    "scripts": {
+        "dev": "pnpm --filter @imput/cobalt-web dev",
+        "build": "pnpm --filter @imput/cobalt-web build",
+        "build:web": "pnpm --filter @imput/cobalt-web build",
+        "preview": "pnpm --filter @imput/cobalt-web preview",
+        "check": "pnpm --filter @imput/cobalt-web check",
+        "start:api": "pnpm --filter @imput/cobalt-api start",
+        "test:api": "pnpm --filter @imput/cobalt-api test"
     }
 }
