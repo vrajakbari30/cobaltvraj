@@ -10,6 +10,7 @@
         "build:web": "pnpm --filter @imput/cobalt-web build",
         "preview": "pnpm --filter @imput/cobalt-web preview",
         "check": "pnpm --filter @imput/cobalt-web check",
+        "deploy": "wrangler deploy",
         "start:api": "pnpm --filter @imput/cobalt-api start",
         "test:api": "pnpm --filter @imput/cobalt-api test"
     }

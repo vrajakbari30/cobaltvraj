@@ -1,0 +1,12 @@
+{
+    "$schema": "node_modules/wrangler/config-schema.json",
+    "name": "cobalt",
+    "compatibility_date": "2025-06-01",
+    "assets": {
+        "directory": "./web/build",
+        "not_found_handling": "404-page"
+    },
+    "build": {
+        "command": "pnpm --filter @imput/cobalt-web build"
+    }
+}

@@ -4,5 +4,8 @@
     "assets": {
         "directory": "./build",
         "not_found_handling": "404-page"
+    },
+    "build": {
+        "command": "pnpm run build"
     }
 }

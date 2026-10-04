@@ -56,7 +56,35 @@ docker run -d \
 
 ---
 
-## 3. Local Development & Testing
+---
+
+## 3. Deploying to Cloudflare Pages / Workers
+
+If deploying via Cloudflare connected to this repository:
+- The root [`wrangler.jsonc`](file:///g:/cobaltvraj/wrangler.jsonc) is preconfigured with the build command:
+  ```jsonc
+  {
+      "name": "cobalt",
+      "compatibility_date": "2025-06-01",
+      "assets": {
+          "directory": "./web/build",
+          "not_found_handling": "404-page"
+      },
+      "build": {
+          "command": "pnpm --filter @imput/cobalt-web build"
+      }
+  }
+  ```
+- **If using Cloudflare Dashboard:**
+  - **Framework preset:** `SvelteKit` (or `None`)
+  - **Root directory:** `/` (or `web`)
+  - **Build command:** `pnpm --filter @imput/cobalt-web build` (or `pnpm run build` if root is `web`)
+  - **Build output directory:** `web/build` (or `build` if root is `web`)
+  - **Environment variables:** `WEB_DEFAULT_API` = `https://api.cobalt.tools/`
+
+---
+
+## 4. Local Development & Testing
 
 ```bash
 # Install dependencies
@@ -67,6 +95,9 @@ pnpm run dev
 
 # Build web frontend for production
 pnpm run build
+
+# Deploy via Wrangler
+pnpm run deploy
 
 # Start local API backend
 pnpm run start:api
